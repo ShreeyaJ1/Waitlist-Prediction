@@ -1,0 +1,20 @@
+{
+    "manifest_version": 3,  
+    "name": "Railway ticket confirmation",
+    "version": "0.0.1",
+    "description": "Predicting whether our waitlisted ticket will be confirmed or not",
+    "permissions": ["storage", "tabs", "activeTab"], 
+    "host_permissions": ["https://www.irctc.co.in/*"],
+
+    "content_scripts": [
+        {
+            "matches": ["https://www.irctc.co.in/*"],
+            "js": ["ContentScript.js"],
+            "run_at": "document_idle" 
+        }
+    ],
+
+    "action": {
+        "default_popup": "popup.html"
+    }
+}
